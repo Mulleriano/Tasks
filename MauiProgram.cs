@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Tasks.ViewModel;
 
 namespace Tasks
 {
@@ -16,7 +17,10 @@ namespace Tasks
                 });
 
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
+
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
 #endif
 
             return builder.Build();
