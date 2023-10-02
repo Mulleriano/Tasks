@@ -25,4 +25,11 @@ public partial class MainViewModel : ObservableObject
         Items.Add(Text);
         Text = string.Empty;
     }
+
+    [RelayCommand]
+    void Delete(string s)
+    {
+        if (Items.Contains(s))
+            Items.Remove(s);
+    }
 }
