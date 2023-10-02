@@ -2,4 +2,53 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Tasks.MainPage">
+
+    <Grid RowDefinitions="100, Auto, *"
+          ColumnDefinitions=".75*, .25*"
+          Padding="10"
+          RowSpacing="10"
+          ColumnSpacing="10">
+
+        <Image Grid.ColumnSpan="2"
+               Source="dotnet_bot.png"/>
+
+        <Entry Placeholder="Adicionar"
+               Grid.Row="1"/>
+
+        <Button Text="Add"
+                Grid.Row="1"
+                Grid.Column="1"/>
+
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Banana</x:String>
+                    <x:String>Banana</x:String>
+                    <x:String>Banana</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Deletar"
+                                           BackgroundColor="red"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <Grid Padding="0,5">
+                            <Frame>
+                                <Label Text="{Binding .}"/>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+
+    </Grid>
+
 </ContentPage>
