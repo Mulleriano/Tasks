@@ -1,5 +1,5 @@
 # Tasks (English)
-First app created with .NET Maui Multiplataform.
+First app created with .NET Maui Crossplataform.
 
 Tasks, is a simple app you can add, exclude and see detail of your tasks
 
