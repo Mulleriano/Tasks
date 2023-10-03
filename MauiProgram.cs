@@ -17,6 +17,7 @@ namespace Tasks
                 });
 
 #if DEBUG
+            builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
             builder.Logging.AddDebug();
 
             builder.Services.AddSingleton<MainPage>();
