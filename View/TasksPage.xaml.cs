@@ -2,9 +2,9 @@ using Tasks.ViewModel;
 
 namespace Tasks;
 
-public partial class DetailPage : ContentPage
+public partial class TasksPage : ContentPage
 {
-    public DetailPage(DetailViewModel vm)
+    public TasksPage(TasksViewModel vm)
     {
         InitializeComponent();
         BindingContext = vm;
