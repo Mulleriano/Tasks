@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 namespace Tasks.ViewModel;
 
 [QueryProperty("Text", "Text")]
-public partial class DetailViewModel : ObservableObject
+public partial class TasksViewModel : BaseViewModel
 {
     [ObservableProperty]
     string text;
