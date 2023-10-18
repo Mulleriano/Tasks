@@ -54,7 +54,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="DetailPage.xaml">
+	  <Compile Update="View\AuthPage.xaml.cs">
+	    <DependentUpon>AuthPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\TaskPage.xaml.cs">
+	    <DependentUpon>TaskPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\TasksPage.xaml.cs">
+	    <DependentUpon>TasksPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\AuthPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\TasksPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

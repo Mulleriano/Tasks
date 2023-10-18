@@ -20,11 +20,14 @@ namespace Tasks
             builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
             builder.Logging.AddDebug();
 
-            builder.Services.AddSingleton<MainPage>();
-            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<AuthPage>();
+            builder.Services.AddSingleton<AuthViewModel>();
 
-            builder.Services.AddTransient<DetailPage>();
-            builder.Services.AddTransient<DetailViewModel>();
+            builder.Services.AddSingleton<TaskPage>();
+            builder.Services.AddSingleton<TaskViewModel>();
+
+            builder.Services.AddTransient<TasksPage>();
+            builder.Services.AddTransient<TasksViewModel>();
 #endif
 
             return builder.Build();
