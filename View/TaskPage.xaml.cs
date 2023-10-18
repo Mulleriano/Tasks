@@ -2,9 +2,9 @@
 
 namespace Tasks;
 
-public partial class MainPage : ContentPage
+public partial class TaskPage : ContentPage
 {
-    public MainPage(MainViewModel vm)
+    public TaskPage(TaskViewModel vm)
     {
         InitializeComponent();
         BindingContext = vm;
