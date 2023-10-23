@@ -28,6 +28,8 @@ namespace Tasks
 
             builder.Services.AddTransient<TasksPage>();
             builder.Services.AddTransient<TasksViewModel>();
+            builder.Services.AddTransient<RegisterPage>();
+            builder.Services.AddTransient<RegisterViewModel>();
 #endif
 
             return builder.Build();
