@@ -50,12 +50,16 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+		<PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="View\AuthPage.xaml.cs">
 	    <DependentUpon>AuthPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\RegisterPage.xaml.cs">
+	    <DependentUpon>RegisterPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="View\TaskPage.xaml.cs">
 	    <DependentUpon>TaskPage.xaml</DependentUpon>
@@ -69,9 +73,14 @@
 	  <MauiXaml Update="View\AuthPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\RegisterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\TasksPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionTasksHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>
