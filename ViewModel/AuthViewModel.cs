@@ -24,6 +24,11 @@ namespace Tasks.ViewModel
         [RelayCommand]
         private async Task Login(object obj)
         {
+            if (Email == null || Password == null)
+            {
+                await Shell.Current.DisplayAlert("Erro", "Preencha todos os campos", "Ok");
+                return;
+            }
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
 
             try
