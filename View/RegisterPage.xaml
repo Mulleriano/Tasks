@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Tasks.AuthPage"
+             x:Class="Tasks.RegisterPage"
              xmlns:viewmodel="clr-namespace:Tasks.ViewModel"
+             x:DataType="viewmodel:RegisterViewModel"
              Shell.PresentationMode="ModalNotAnimated"
-             x:DataType="viewmodel:AuthViewModel">
-
+             Title="Cadastre-se">
     <Grid RowDefinitions="200, *, 50">
 
-        <Path Data="m0.30001,0l449,0l0,128.48327c-122.5,64.30167 -332.5,65.89076 -449,7.2429c0,-45.25313 0,-90.47304 0,-135.72617z" Fill="{StaticResource Primary}" Stroke="{StaticResource Primary}"/>
+        <Path Data="m0.30001,0l449,0l0,128.48327c-122.5,64.30167 -332.5,65.89076 -449,7.2429c0,-45.25313 0,-90.47304 0,-135.72617z" Fill="{StaticResource Primary}"
+              Stroke="{StaticResource Primary}"/>
 
         <StackLayout>
             <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0, 100, 0, 0" HorizontalOptions="Center">
@@ -17,23 +18,24 @@
         </StackLayout>
 
         <Grid RowSpacing="5"
-              RowDefinitions="auto, 50, 50, auto"
+              RowDefinitions="auto, 50, auto"
               Grid.Row="1"
-              Margin="20, 20, 20, 0">
+              Margin="20, 20, 20, 0"
+              >
 
-            <Label Grid.Row="1" Text="Seja Bem Vindo ao Tasks!" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0"/>
+            <Label Grid.Row="1" Text="Cadastre-se" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0"/>
 
-            <Label Grid.Row="2" Text="Faça seu login" HorizontalOptions="Center" FontSize="Subtitle"/>
+            <Label Grid.Row="2" Text="Faça seu cadastro" HorizontalOptions="Center" FontSize="Subtitle"/>
 
             <StackLayout Grid.Row="3"
-                         Orientation="Vertical"
-                         HorizontalOptions="CenterAndExpand">
+                       Orientation="Vertical"
+                       HorizontalOptions="CenterAndExpand">
                 <Frame BorderColor="{StaticResource Blue100Accent}"
                        Padding="10, 5"
                        HorizontalOptions="FillAndExpand"
                        CornerRadius="30">
                     <StackLayout Orientation="Horizontal"
-                                 WidthRequest="250">
+                               WidthRequest="250">
                         <Frame BackgroundColor="SkyBlue"
                                HeightRequest="40"
                                WidthRequest="40"
@@ -46,6 +48,32 @@
                         </Frame>
                         <Entry Placeholder="Email"
                                Text="{Binding Email}"
+                               TextColor="Black"
+                               VerticalOptions="Center"
+                               HorizontalOptions="FillAndExpand"
+                               Margin="0, 0, 20, 0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BorderColor="{StaticResource Blue100Accent}"
+                    Margin="0, 15, 0, 0"
+                    Padding="10, 5"
+                    HorizontalOptions="FillAndExpand"
+                    CornerRadius="30">
+                    <StackLayout Orientation="Horizontal"
+                              WidthRequest="250">
+                        <Frame BackgroundColor="SkyBlue"
+                            HeightRequest="40" WidthRequest="40"
+                            CornerRadius="30"
+                            Padding="0"
+                            Margin="5">
+                            <Image Source="https://cdn4.iconfinder.com/data/icons/basic-ui-elements-round/700/09_lock-256.png"
+                                Aspect="AspectFill"
+                                Margin="0"/>
+                        </Frame>
+                        <Entry Placeholder="Senha"
+                               Text="{Binding Password}"
+                               IsPassword="True"
                                TextColor="Black"
                                VerticalOptions="Center"
                                HorizontalOptions="FillAndExpand"
@@ -69,8 +97,8 @@
                                    Aspect="AspectFill"
                                    Margin="0"/>
                         </Frame>
-                        <Entry Placeholder="Senha"
-                               Text="{Binding Password}"
+                        <Entry Placeholder="Confirme sua Senha"
+                               Text="{Binding ConfirmPassword}"
                                IsPassword="True"
                                TextColor="Black"
                                VerticalOptions="Center"
@@ -80,18 +108,18 @@
                 </Frame>
 
 
-                <Button Text="Login"
-                        Margin="0, 20, 0, 0"
-                        WidthRequest="100"
-                        Command="{Binding LoginCommand}"/>
+                <Button Text="Registro"
+                     Margin="0, 20, 0, 0"
+                     WidthRequest="100"
+                     Command="{Binding RegisterCommand}"/>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 20, 0, 0">
-                    <Label Text="Novo usuário?"/>
-                    <Label Text=" Registre-se"
-                           TextColor="{StaticResource Primary}">
+                    <Label Text="Já possui uma conta?"/>
+                    <Label Text=" Faça Login"
+                        TextColor="{StaticResource Primary}">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer  Command="{Binding GoToRegisterCommand}"
-                                                   CommandParameter="{Binding .}"/>
+                            <TapGestureRecognizer  Command="{Binding GoToLoginCommand}"
+                                                CommandParameter="{Binding .}"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </StackLayout>
