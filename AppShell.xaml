@@ -4,15 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Tasks"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:viewmodel="clr-namespace:Tasks.ViewModel"
+    x:DataType="viewmodel:AppShellViewModel"
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        ContentTemplate="{DataTemplate local:AuthPage}"
-        Route="AuthPage" />
-
-    <ShellContent
+    <ShellContent ContentTemplate="{DataTemplate local:AuthPage}"
+                  Route="AuthPage"
+                  Shell.FlyoutBehavior="Disabled"
+                  FlyoutItemIsVisible="False"/>
+    
+    <FlyoutItem Title="Tasks">
+        <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:TaskPage}"
         Route="TaskPage" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>
