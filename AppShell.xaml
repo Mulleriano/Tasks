@@ -13,11 +13,16 @@
                   Shell.FlyoutBehavior="Disabled"
                   FlyoutItemIsVisible="False"/>
     
-    <FlyoutItem Title="Tasks">
-        <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:TaskPage}"
-        Route="TaskPage" />
+    <FlyoutItem Title="Tasks" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Home"
+                      ContentTemplate="{DataTemplate local:TaskPage}"
+                      Route="TaskPage"
+                      Icon="home.svg"/>
+
+        <ShellContent Title="QR Code"
+                      ContentTemplate="{DataTemplate local:QRPage}"
+                      Route="QRPage"
+                      Icon="qrcode.svg"/>
     </FlyoutItem>
 
     <Shell.FlyoutFooter>

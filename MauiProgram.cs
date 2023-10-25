@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Camera.MAUI;
+using Microsoft.Extensions.Logging;
 using Tasks.ViewModel;
 
 namespace Tasks
@@ -10,6 +11,7 @@ namespace Tasks
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCameraView()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -25,6 +27,9 @@ namespace Tasks
 
             builder.Services.AddSingleton<TaskPage>();
             builder.Services.AddSingleton<TaskViewModel>();
+
+            builder.Services.AddSingleton<QRPage>();
+            builder.Services.AddSingleton<QRViewModel>();
 
             builder.Services.AddTransient<TasksPage>();
             builder.Services.AddTransient<TasksViewModel>();

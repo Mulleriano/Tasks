@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             xmlns:viewmodel="clr-namespace:Tasks.ViewModel"
+             x:DataType="viewmodel:QRViewModel"
+             x:Class="Tasks.QRPage">
+    <VerticalStackLayout VerticalOptions="Fill"
+                         Padding="30, 0"
+                         HorizontalOptions="Fill">
+        <Label 
+            Padding="10"
+            Text="Leia o QR code para encontrar o Easter Egg"
+            FontSize="Title"
+            FontAttributes="Bold"
+            HorizontalTextAlignment="Center" />
+
+        <cv:CameraView x:Name="cameraView"
+                       WidthRequest="300"
+                       HeightRequest="300"
+                       CamerasLoaded="cameraView_CamerasLoaded"
+                       BarCodeDetectionEnabled="True"
+                       BarCodeResults="{Binding BarCodeResults, Mode=OneWayToSource}"/>
+
+        <Image Source="{Binding BarcodeText}"
+               Margin="30"/>
+    </VerticalStackLayout>
+</ContentPage>
