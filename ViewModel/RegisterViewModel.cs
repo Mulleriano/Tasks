@@ -42,8 +42,7 @@ namespace Tasks.ViewModel
                 string token = auth.FirebaseToken;
                 if (token != null)
                 {
-                    Preferences.Set("FreshFirebaseToken", token);
-                    await Shell.Current.DisplayAlert("Registrado", $"Usuário registrado com sucesso - {token}", "Ok");
+                    await Shell.Current.DisplayAlert("Registrado", $"Usuário registrado com sucesso", "Ok");
                     await Shell.Current.GoToAsync($"///{nameof(TaskPage)}");
                 }
 
