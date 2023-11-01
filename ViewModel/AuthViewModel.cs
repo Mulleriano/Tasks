@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Firebase.Auth;
-using Newtonsoft.Json;
+using FirebaseAdmin;
+using FirebaseAdmin.Messaging;
+using Google.Apis.Auth.OAuth2;
 
 namespace Tasks.ViewModel
 {
@@ -14,6 +16,26 @@ namespace Tasks.ViewModel
         private string email;
         [ObservableProperty]
         private string password;
+
+        public AuthViewModel()
+        {
+            ReadFirebaseAdmin();
+        }
+
+        private async void ReadFirebaseAdmin()
+        {
+            var stream = await FileSystem.OpenAppPackageFileAsync("admin_sdk.json");
+            var reader = new StreamReader(stream);
+            var jsonContent = reader.ReadToEnd();
+
+            if (FirebaseMessaging.DefaultInstance == null)
+            {
+                FirebaseApp.Create(new AppOptions()
+                {
+                    Credential = GoogleCredential.FromJson(jsonContent)
+                });
+            }
+        }
 
         [RelayCommand]
         async Task GoToRegister()
@@ -34,9 +56,6 @@ namespace Tasks.ViewModel
             try
             {
                 var auth = await authProvider.SignInWithEmailAndPasswordAsync(Email, Password);
-                var content = await auth.GetFreshAuthAsync();
-                var serializedContent = JsonConvert.SerializeObject(content);
-                Preferences.Set("FreshFirebaseToken", serializedContent);
                 await Shell.Current.GoToAsync($"///{nameof(TaskPage)}");
             }
             catch (Exception ex)
