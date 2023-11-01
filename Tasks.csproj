@@ -56,6 +56,7 @@
 	<ItemGroup>
 		<PackageReference Include="Camera.MAUI" Version="1.4.4" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+		<PackageReference Include="FirebaseAdmin" Version="2.4.0" />
 		<PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
@@ -88,6 +89,22 @@
 	  <MauiXaml Update="View\TasksPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+		<PackageReference Include="Xamarin.Firebase.Messaging">
+			<Version>123.1.1.1</Version>
+		</PackageReference>
+		<PackageReference Include="Xamarin.Google.Dagger">
+			<Version>2.44.2.1</Version>
+		</PackageReference>
+		<PackageReference Include="Xamarin.GooglePlayServices.Base">
+			<Version>118.1.0.1</Version>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<GoogleServicesJson Include="Platforms\Android\google-services.json" />
 	</ItemGroup>
 
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionTasksHideInfoBar="True" /></VisualStudio></ProjectExtensions>
