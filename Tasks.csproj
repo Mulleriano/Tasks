@@ -51,6 +51,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\qrcode.png" />
 	  <None Remove="Resources\Images\qrcode.svg" />
+	  <None Remove="Resources\Images\web.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -87,6 +88,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\TasksPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\WebviewPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
