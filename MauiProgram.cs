@@ -31,6 +31,9 @@ namespace Tasks
             builder.Services.AddSingleton<QRPage>();
             builder.Services.AddSingleton<QRViewModel>();
 
+            builder.Services.AddSingleton<WebviewPage>();
+            builder.Services.AddSingleton<WebviewViewModel>();
+
             builder.Services.AddTransient<TasksPage>();
             builder.Services.AddTransient<TasksViewModel>();
             builder.Services.AddTransient<RegisterPage>();

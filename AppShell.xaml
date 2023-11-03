@@ -23,6 +23,11 @@
                       ContentTemplate="{DataTemplate local:QRPage}"
                       Route="QRPage"
                       Icon="qrcode.svg"/>
+
+        <ShellContent Title="Web View"
+                      ContentTemplate="{DataTemplate local:WebviewPage}"
+                      Route="WebviewPage"
+                      Icon="web.png"/>
     </FlyoutItem>
 
     <Shell.FlyoutFooter>
