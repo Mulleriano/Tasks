@@ -5,7 +5,7 @@ Tasks, is a simple app you can add, exclude and see detail of your tasks
 
 # Demonstration / Demonstração
 
-https://github.com/Mulleriano/Tasks/blob/main/Resources/Images/demonstration.mp4
+https://github.com/Mulleriano/Tasks/assets/91329603/b84b4bff-8d5c-4990-80e9-beef0ac767ab
 
 ------------------------------------------------------------------------------------------
 
