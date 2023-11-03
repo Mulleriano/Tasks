@@ -49,6 +49,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Resources\Demonstration\**" />
+	  <Compile Remove="Resources\Demonstration\**" />
+	  <EmbeddedResource Remove="Resources\Demonstration\**" />
+	  <MauiCss Remove="Resources\Demonstration\**" />
+	  <MauiXaml Remove="Resources\Demonstration\**" />
+	  <None Remove="Resources\Demonstration\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\qrcode.png" />
 	  <None Remove="Resources\Images\qrcode.svg" />
 	  <None Remove="Resources\Images\web.png" />

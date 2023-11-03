@@ -10,7 +10,7 @@ namespace Tasks.ViewModel
             try
             {
                 Preferences.Remove("FreshFirebaseToken");
-                await Shell.Current.DisplayAlert("Logout", $"Logout feito com sucesso - {Preferences.Get("FreshFirebaseToken", "Unknown")}", "OK");
+                await Shell.Current.DisplayAlert("Logout", "Logout feito com sucesso", "OK");
                 await Shell.Current.GoToAsync($"///{nameof(AuthPage)}");
             }
             catch (Exception ex)
