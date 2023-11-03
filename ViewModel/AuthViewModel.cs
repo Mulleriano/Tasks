@@ -10,7 +10,7 @@ namespace Tasks.ViewModel
     public partial class AuthViewModel : BaseViewModel
     {
 
-        public string webApiKey = "AIzaSyBUuvP3_EE1qDKd-VTJYN8HWWwo0frbZFU";
+        public string webApiKey = "web-api-key";
 
         [ObservableProperty]
         private string email;

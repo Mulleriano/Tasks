@@ -6,7 +6,7 @@ namespace Tasks.ViewModel
 {
     public partial class RegisterViewModel : BaseViewModel
     {
-        public string webApiKey = "AIzaSyBUuvP3_EE1qDKd-VTJYN8HWWwo0frbZFU";
+        public string webApiKey = "web-api-key";
 
         [ObservableProperty]
         private string email;
@@ -42,8 +42,8 @@ namespace Tasks.ViewModel
                 string token = auth.FirebaseToken;
                 if (token != null)
                 {
-                    await Shell.Current.DisplayAlert("Registrado", $"Usuário registrado com sucesso", "Ok");
-                    await Shell.Current.GoToAsync($"///{nameof(TaskPage)}");
+                    await Shell.Current.DisplayAlert("Registrado", $"Usuário registrado com sucesso, redirecionando para Logar", "Ok");
+                    await Shell.Current.GoToAsync($"///{nameof(AuthPage)}");
                 }
 
             }
